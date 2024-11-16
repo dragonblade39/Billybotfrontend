@@ -1,0 +1,184 @@
+/* Ensure smooth interaction with the chatbot */
+.chatbot {
+  width: 480px;
+  height: 750px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.chatbot.open {
+  opacity: 1;
+  visibility: visible; /* Show the chatbot */
+}
+
+/* Header of the chatbot */
+.chatbot-header {
+  background-color: #007bff;
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Chat message area */
+.chatbot-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f1f1f1;
+  border-bottom: 2px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* General message styling */
+.message {
+  max-width: 75%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Bot messages styling */
+.message.bot {
+  background-color: #e6f7ff; /* Light blue for bot */
+  margin-left: 0;
+  margin-right: auto; /* Align bot messages to the left */
+  border: 1px solid #b3e0ff;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 15px; /* Space between messages */
+}
+
+/* User messages styling */
+.message.user {
+  background-color: #007bff; /* Blue for user */
+  margin-left: auto; /* Align user messages to the right */
+  margin-right: 0;
+  border: 1px solid #007bff;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 15px; /* Space between messages */
+}
+
+/* Input section for messages */
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  justify-content: space-between;
+}
+
+.chatbot-input input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.chatbot-input input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.chatbot-input button {
+  width: 15%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-input button:disabled {
+  background-color: #b3d1ff;
+  cursor: not-allowed;
+}
+
+.chatbot-input button:hover {
+  background-color: #0056b3;
+}
+
+/* File upload section */
+.file-upload {
+  padding: 15px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid #ddd;
+}
+
+.file-upload input {
+  margin-bottom: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.file-upload p {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333;
+  font-style: italic;
+}
+
+/* Floating button to open the chatbot */
+.chatbot-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 70px;
+  height: 70px;
+  background-color: #027bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chatbot-icon:hover {
+  background-color: #0056b3;
+  transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+.chatbot-icon:active {
+  transform: scale(1);
+}
+
+.chatbot-icon span {
+  margin: 0;
+  font-size: 30px;
+}
